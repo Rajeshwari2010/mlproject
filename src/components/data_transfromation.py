@@ -98,6 +98,11 @@ class DataTransformation:
                 input_features_test_arr,np.array(target_feature_test_df)
             ]
 
+            ''' So train_arr contains both the processed features and the target in one NumPy array. 
+            Before training the model, you need to split that array into features (X) and target (y) again.
+            separate to transform data nad combine again to forward to data transformer 
+            we split again in model traner to give inouts to different models'''
+
             logging.info("Saving object...")
 
             save_object(

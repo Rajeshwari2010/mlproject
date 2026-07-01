@@ -81,6 +81,9 @@ class ModelTrainer:
                 obj=best_model
             )
 
+            logging.info("Model svaed")
+
+
             predicted_score=best_model.predict(X_test)
 
             r2_square=r2_score(y_test,predicted_score)
