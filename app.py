@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request,render_template
+from flask import Flask, app, jsonify, request,render_template
 import numpy as np
 import pandas as pd
 
@@ -8,7 +8,8 @@ from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
 
 
-app = Flask(__name__)
+application = Flask(__name__)
+app = application
 
 @app.route('/')
 def index():
@@ -40,4 +41,4 @@ def predict_datapoint():
 
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0",port=8080,debug=True)
+    app.run(host="0.0.0.0")
